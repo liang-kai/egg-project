@@ -9,7 +9,7 @@ class HomeController extends Controller {
   }
   async redirect () {
     const { ctx } = this;
-    ctx.unsafeRedirect('http://www.baidu.com')
+    ctx.unsafeRedirect('http://e.test.bank.ecitic.com/citiccard/frontend/dev-mgm-sdk/static/hongbo-test-c.html')
   }
 }
 
