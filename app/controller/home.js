@@ -12,6 +12,13 @@ class HomeController extends Controller {
     const query = this.ctx.query;
     ctx.unsafeRedirect(query.rtn || 'http://shipin.press')
   }
+
+  async cacheControl() {
+    const { ctx } = this;
+    ctx.set('Cache-Control', 'no-store')
+    ctx.set('Cache-Control', 'no-cache')
+    await ctx.render('cache.ejs')
+  }
 }
 
 module.exports = HomeController;

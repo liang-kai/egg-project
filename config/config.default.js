@@ -21,6 +21,23 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+    security : {
+      csrf: {
+        enable: false,
+      },
+      domainWhiteList: ["*"], // 白名单
+    },
+    cors : {
+      origin: '*',
+      allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+      credentials: true
+    },
+    view : {
+      mapping: {
+        '.ejs': 'ejs',
+      },
+      // defaultViewEngine: 'ejs'
+    }
   };
 
   return {
@@ -29,15 +46,22 @@ module.exports = appInfo => {
   };
 };
 
-exports.security = {
-  csrf: {
-		enable: false,
-	},
-	domainWhiteList: ["*"], // 白名单
-};
+// exports.security = {
+//   csrf: {
+// 		enable: false,
+// 	},
+// 	domainWhiteList: ["*"], // 白名单
+// };
 
-exports.cors = {
-  origin: '*',
-  allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
-  credentials: true
-};
+// exports.cors = {
+//   origin: '*',
+//   allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+//   credentials: true
+// };
+
+// exports.view = {
+//   mapping: {
+//     '.ejs': 'ejs',
+//   },
+//   // defaultViewEngine: 'ejs'
+// }
